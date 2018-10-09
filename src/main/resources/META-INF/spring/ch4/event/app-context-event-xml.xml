@@ -6,5 +6,5 @@
        ">
 
     <bean id="publicher" class="com.apress.prospring4.ch4.event.Publisher"/>
-    <bean id="messageEventListener" class="com.apress.prospring4.ch4.event.MessageEventListener"/>
+    <bean id="messageEventListener" class="com.apress.prospring4.ch4.event.MsgEventListener"/>
 </beans>
