@@ -16,7 +16,7 @@ public class MyAdvice {
     public void fooExecution(int intValue){
     }
 
-    @Pointcut("bean(*myDependency*)")
+    @Pointcut("bean(myDependency)")
     public void inMyDependency(){
     }
 
