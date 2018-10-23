@@ -1,5 +1,6 @@
 package com.apress.prospring4.ch6.annotation_jdbc.dao;
 
+import com.apress.prospring4.ch6.annotation_jdbc.dao.support.SelectAllContacts;
 import com.apress.prospring4.ch6.annotation_jdbc.entities.Contact;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -14,10 +15,12 @@ public class JdbcContactDao implements ContactDao {
     private Log log = LogFactory.getLog(JdbcContactDao.class);
 
     private DataSource dataSource;
+    private SelectAllContacts selectAllContacts;
 
     @Resource(name = "dataSource")
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
+        this.selectAllContacts = new SelectAllContacts(dataSource);
     }
 
     public DataSource getDataSource() {
@@ -25,7 +28,7 @@ public class JdbcContactDao implements ContactDao {
     }
 
     public List<Contact> findAll() {
-        return null;
+        return selectAllContacts.execute();
     }
 
     public List<Contact> findByFirstName(String firstName) {
