@@ -1,12 +1,12 @@
-package com.apress.prospring4.ch6.dao;
+package com.apress.prospring4.ch6.jdbc.dao;
 
-import com.apress.prospring4.ch6.entities.Contact;
+import com.apress.prospring4.ch6.jdbc.entities.Contact;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlainContactDao implements ContactDao {
+public class PlainContactDao implements com.apress.prospring4.ch6.jdbc.dao.ContactDao {
     static {
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -16,7 +16,7 @@ public class PlainContactDao implements ContactDao {
     }
 
     private Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/spring_in_action?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false", "root", "root");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/spring_in_action?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false", "root", "askir!scyzm");
     }
 
     private void closeConnection(Connection connection){

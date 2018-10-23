@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch6.entities;
+package com.apress.prospring4.ch6.annotation_jdbc.entities;
 
 import java.io.Serializable;
 

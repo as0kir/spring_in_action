@@ -1,21 +1,21 @@
-package com.apress.prospring4.ch6.dao;
+package com.apress.prospring4.ch6.jdbc;
 
-import com.apress.prospring4.ch6.entities.Contact;
+import com.apress.prospring4.ch6.jdbc.entities.Contact;
 
 import java.sql.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 public class PlainJdbsSample {
-    private static ContactDao contactDao = new PlainContactDao();
+    private static com.apress.prospring4.ch6.jdbc.dao.ContactDao contactDao = new com.apress.prospring4.ch6.jdbc.dao.PlainContactDao();
 
     public static void main(String[] args) {
-        //  Вывести начальный список контактов
+        //  Р’С‹РІРµСЃС‚Рё РЅР°С‡Р°Р»СЊРЅС‹Р№ СЃРїРёСЃРѕРє РєРѕРЅС‚Р°РєС‚РѕРІ
         System.out.println("Listing initial contact data:");
         listAllContacts();
 
         System.out.println();
-        //  Вставить новый контакт
+        //  Р’СЃС‚Р°РІРёС‚СЊ РЅРѕРІС‹Р№ РєРѕРЅС‚Р°РєС‚
         System.out.println("Insert a new  contact");
         Contact contact = new Contact();
         contact.setFirstName("Jacky");
@@ -23,15 +23,15 @@ public class PlainJdbsSample {
         contact.setBirthDate(new Date((new GregorianCalendar(2001, 10, 1)).getTime().getTime()));
         contactDao.insert(contact);
 
-        //  Вывести список контактов после создания нового контакта
+        //  Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє РєРѕРЅС‚Р°РєС‚РѕРІ РїРѕСЃР»Рµ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕРіРѕ РєРѕРЅС‚Р°РєС‚Р°
         System.out.println("Listing contact data after new contact created:");
         listAllContacts();
         System.out.println();
 
-        //  Удалить только что созданный контакт
+        //  РЈРґР°Р»РёС‚СЊ С‚РѕР»СЊРєРѕ С‡С‚Рѕ СЃРѕР·РґР°РЅРЅС‹Р№ РєРѕРЅС‚Р°РєС‚
         System.out.println("Deleting the previous created contact");
         contactDao.delete(contact.getId());
-        // Вывести список контактов после удаления ранее созданного контакта
+        // Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє РєРѕРЅС‚Р°РєС‚РѕРІ РїРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ СЂР°РЅРµРµ СЃРѕР·РґР°РЅРЅРѕРіРѕ РєРѕРЅС‚Р°РєС‚Р°
         System.out.println("Listing contact data after new contact deleted:");
         listAllContacts();
     }

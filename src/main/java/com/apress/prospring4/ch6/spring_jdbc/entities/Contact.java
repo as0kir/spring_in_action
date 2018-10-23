@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch6.entities;
+package com.apress.prospring4.ch6.spring_jdbc.entities;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -57,7 +57,6 @@ public class Contact implements Serializable{
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", birthDate=" + birthDate +
-                ", contactTelDetails=" + contactTelDetails;
+                ", birthDate=" + birthDate;
     }
 }
