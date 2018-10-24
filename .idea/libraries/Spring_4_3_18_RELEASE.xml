@@ -24,6 +24,8 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.ideaLibSources/spring-aop-4.3.18.RELEASE-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/commons-logging-1.2-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-jdbc-4.3.18.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
