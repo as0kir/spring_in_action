@@ -12,7 +12,7 @@
     <context:component-scan base-package="com.apress.prospring4.ch6.annotation_jdbc"/>
 
     <jdbc:embedded-database id="dataSource" type="H2">
-        <jdbc:script location="scripts/init.sql"/>
-        <jdbc:script location="scripts/fill.sql"/>
+        <jdbc:script location="scripts/ch6/init.sql"/>
+        <jdbc:script location="scripts/ch6/fill.sql"/>
     </jdbc:embedded-database>
 </beans>
