@@ -8,6 +8,12 @@ import java.util.Set;
 
 @Entity
 @Table(name = "contact")
+@NamedQueries({
+        @NamedQuery(name = "Contact.findAllWithDetail",
+                query = "select distinct c from com.apress.prospring4.ch7.entities.Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h"),
+        @NamedQuery(name = "Contact.findById",
+                query = "select distinct c from com.apress.prospring4.ch7.entities.Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id")
+})
 public class Contact implements Serializable {
     private Long id;
     private int version;
@@ -15,6 +21,7 @@ public class Contact implements Serializable {
     private String lastName;
     private Date birthDate;
     private Set<ContactTelDetail> contactTelDetails = new HashSet<ContactTelDetail>();
+    private Set<Hobby> hobbies = new HashSet<Hobby>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,6 +88,16 @@ public class Contact implements Serializable {
 
     public void removeContactTelDetail(ContactTelDetail contactTelDetail){
         getContactTelDetails().remove(contactTelDetail);
+    }
+
+    @ManyToMany
+    @JoinTable(name = "contact_hobby_detail", joinColumns = @JoinColumn(name = "CONTACT_ID"), inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
+    public Set<Hobby> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(Set<Hobby> hobbies) {
+        this.hobbies = hobbies;
     }
 
     @Override
