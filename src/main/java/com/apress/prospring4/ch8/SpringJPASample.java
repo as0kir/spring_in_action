@@ -67,6 +67,9 @@ public class SpringJPASample {
         contact = contactService.findById(1l);
         contactService.delete(contact);
         listContactsWithDetail(contactService.findAllWithDetail());
+
+        List<Contact> contacts = contactService.findByCriteriaQuery("John", "Smith");
+        listContactsWithDetail(contacts);
     }
 
     private static void listContacts(List<Contact> contacts) {
