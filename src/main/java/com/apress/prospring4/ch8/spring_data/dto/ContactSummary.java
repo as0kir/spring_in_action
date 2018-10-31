@@ -1,4 +1,4 @@
-package com.apress.prospring4.ch8.dto;
+package com.apress.prospring4.ch8.spring_data.dto;
 
 import java.io.Serializable;
 

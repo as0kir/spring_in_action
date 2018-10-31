@@ -1,6 +1,6 @@
-package com.apress.prospring4.ch8.service;
+package com.apress.prospring4.ch8.jpa.service;
 
-import com.apress.prospring4.ch8.dto.ContactSummary;
+import com.apress.prospring4.ch8.jpa.dto.ContactSummary;
 
 import java.util.List;
 

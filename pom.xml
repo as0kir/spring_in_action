@@ -23,6 +23,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
+            <version>5.1.0.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -40,6 +41,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
+            <version>5.1.0.RELEASE</version>
         </dependency>
 
 
@@ -110,11 +112,9 @@
             <version>11.0-rc1</version>
         </dependency>
 
-
-
     </dependencies>
 
-    <dependencyManagement>
+    <!--<dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -124,5 +124,5 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement> -->
 </project>

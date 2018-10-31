@@ -1,12 +1,12 @@
-package com.apress.prospring4.ch8;
+package com.apress.prospring4.ch8.jpa;
 
-import com.apress.prospring4.ch8.dto.ContactSummary;
-import com.apress.prospring4.ch8.entities.ContactTelDetail;
-import com.apress.prospring4.ch8.entities.Hobby;
-import com.apress.prospring4.ch8.entities.Contact;
-import com.apress.prospring4.ch8.service.ContactService;
-import com.apress.prospring4.ch8.service.ContactSummaryService;
-import com.apress.prospring4.ch8.service.ContactSummoryUntypeImpl;
+import com.apress.prospring4.ch8.jpa.dto.ContactSummary;
+import com.apress.prospring4.ch8.jpa.entities.ContactTelDetail;
+import com.apress.prospring4.ch8.jpa.entities.Hobby;
+import com.apress.prospring4.ch8.jpa.entities.Contact;
+import com.apress.prospring4.ch8.jpa.service.ContactService;
+import com.apress.prospring4.ch8.jpa.service.ContactSummaryService;
+import com.apress.prospring4.ch8.jpa.service.ContactSummoryUntypeImpl;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.util.*;
@@ -14,7 +14,7 @@ import java.util.*;
 public class SpringJPASample {
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:META-INF/spring/ch8/app-context-xml.xml");
+        ctx.load("classpath:META-INF/spring/ch8/jpa/app-context-xml.xml");
         ctx.refresh();
 
         ContactService contactService = ctx.getBean("jpaContactService", ContactService.class);

@@ -1,7 +1,7 @@
-package com.apress.prospring4.ch8.service;
+package com.apress.prospring4.ch8.jpa.service;
 
-import com.apress.prospring4.ch8.entities.Contact;
-import com.apress.prospring4.ch8.entities.Contact_;
+import com.apress.prospring4.ch8.jpa.entities.Contact;
+import com.apress.prospring4.ch8.jpa.entities.Contact_;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;

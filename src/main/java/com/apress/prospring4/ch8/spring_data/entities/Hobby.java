@@ -1,7 +1,4 @@
-package com.apress.prospring4.ch8.entities;
-
-import com.apress.prospring4.ch8.entities.*;
-import com.apress.prospring4.ch8.entities.Contact;
+package com.apress.prospring4.ch8.spring_data.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,7 +9,7 @@ import java.util.Set;
 @Table(name = "hobby")
 public class Hobby implements Serializable {
     private String hobbyId;
-    private Set<com.apress.prospring4.ch8.entities.Contact> contacts = new HashSet<com.apress.prospring4.ch8.entities.Contact>();
+    private Set<com.apress.prospring4.ch8.spring_data.entities.Contact> contacts = new HashSet<com.apress.prospring4.ch8.spring_data.entities.Contact>();
 
     @Id
     @Column(name = "HOBBY_ID")
@@ -26,11 +23,11 @@ public class Hobby implements Serializable {
 
     @ManyToMany
     @JoinTable(name = "contact_hobby_detail", joinColumns = @JoinColumn(name = "HOBBY_ID"), inverseJoinColumns = @JoinColumn(name = "CONTACT_ID"))
-    public Set<com.apress.prospring4.ch8.entities.Contact> getContacts() {
+    public Set<com.apress.prospring4.ch8.spring_data.entities.Contact> getContacts() {
         return contacts;
     }
 
-    public void setContacts(Set<com.apress.prospring4.ch8.entities.Contact> contacts) {
+    public void setContacts(Set<com.apress.prospring4.ch8.spring_data.entities.Contact> contacts) {
         this.contacts = contacts;
     }
 

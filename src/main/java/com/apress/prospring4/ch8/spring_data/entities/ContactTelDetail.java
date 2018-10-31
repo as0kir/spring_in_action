@@ -1,7 +1,4 @@
-package com.apress.prospring4.ch8.entities;
-
-import com.apress.prospring4.ch8.entities.*;
-import com.apress.prospring4.ch8.entities.Contact;
+package com.apress.prospring4.ch8.spring_data.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,7 +10,7 @@ public class ContactTelDetail implements Serializable {
     private int version;
     private String telType;
     private String telNumber;
-    private com.apress.prospring4.ch8.entities.Contact contact;
+    private com.apress.prospring4.ch8.spring_data.entities.Contact contact;
 
     public ContactTelDetail() {
     }
@@ -64,11 +61,11 @@ public class ContactTelDetail implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "CONTACT_ID")
-    public com.apress.prospring4.ch8.entities.Contact getContact() {
+    public com.apress.prospring4.ch8.spring_data.entities.Contact getContact() {
         return contact;
     }
 
-    public void setContact(com.apress.prospring4.ch8.entities.Contact contact) {
+    public void setContact(com.apress.prospring4.ch8.spring_data.entities.Contact contact) {
         this.contact = contact;
     }
 

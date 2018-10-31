@@ -1,6 +1,6 @@
-package com.apress.prospring4.ch8.service;
+package com.apress.prospring4.ch8.jpa.service;
 
-import com.apress.prospring4.ch8.dto.ContactSummary;
+import com.apress.prospring4.ch8.jpa.dto.ContactSummary;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,8 +19,8 @@ public class ContactSummaryServiceImpl implements ContactSummaryService {
 
     @Transactional(readOnly = true)
     public List<ContactSummary> findAll() {
-        List<ContactSummary> resultList = em.createQuery("select new com.apress.prospring4.ch8.dto.ContactSummary(c.firstName, c.lastName, t.telNumber) " +
-                " from com.apress.prospring4.ch8.entities.Contact c left join c.contactTelDetails t where t.telType = 'Home'", ContactSummary.class).getResultList();
+        List<ContactSummary> resultList = em.createQuery("select new com.apress.prospring4.ch8.jpa.dto.ContactSummary(c.firstName, c.lastName, t.telNumber) " +
+                " from com.apress.prospring4.ch8.jpa.entities.Contact c left join c.contactTelDetails t where t.telType = 'Home'", ContactSummary.class).getResultList();
         return resultList;
     }
 }

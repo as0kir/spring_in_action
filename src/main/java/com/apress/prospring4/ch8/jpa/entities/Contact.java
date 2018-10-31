@@ -1,7 +1,4 @@
-package com.apress.prospring4.ch8.entities;
-
-import com.apress.prospring4.ch8.entities.ContactTelDetail;
-import com.apress.prospring4.ch8.entities.Hobby;
+package com.apress.prospring4.ch8.jpa.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,11 +10,11 @@ import java.util.Set;
 @Table(name = "contact")
 @NamedQueries({
         @NamedQuery(name = "Contact.findAll",
-                query = "select c from com.apress.prospring4.ch8.entities.Contact c"),
+                query = "select c from com.apress.prospring4.ch8.jpa.entities.Contact c"),
         @NamedQuery(name = "Contact.findById",
-                query = "select distinct c from com.apress.prospring4.ch8.entities.Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
+                query = "select distinct c from com.apress.prospring4.ch8.jpa.entities.Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
         @NamedQuery(name = "Contact.findAllWithDetail",
-                query = "select distinct c from com.apress.prospring4.ch8.entities.Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
+                query = "select distinct c from com.apress.prospring4.ch8.jpa.entities.Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
 })
 @SqlResultSetMapping(
         name = "contactResult",
@@ -29,8 +26,8 @@ public class Contact implements Serializable {
     private String firstName;
     private String lastName;
     private Date birthDate;
-    private Set<com.apress.prospring4.ch8.entities.ContactTelDetail> contactTelDetails = new HashSet<com.apress.prospring4.ch8.entities.ContactTelDetail>();
-    private Set<com.apress.prospring4.ch8.entities.Hobby> hobbies = new HashSet<com.apress.prospring4.ch8.entities.Hobby>();
+    private Set<com.apress.prospring4.ch8.jpa.entities.ContactTelDetail> contactTelDetails = new HashSet<com.apress.prospring4.ch8.jpa.entities.ContactTelDetail>();
+    private Set<com.apress.prospring4.ch8.jpa.entities.Hobby> hobbies = new HashSet<com.apress.prospring4.ch8.jpa.entities.Hobby>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -82,30 +79,30 @@ public class Contact implements Serializable {
     }
 
     @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Set<com.apress.prospring4.ch8.entities.ContactTelDetail> getContactTelDetails() {
+    public Set<com.apress.prospring4.ch8.jpa.entities.ContactTelDetail> getContactTelDetails() {
         return contactTelDetails;
     }
 
-    public void setContactTelDetails(Set<com.apress.prospring4.ch8.entities.ContactTelDetail> contactTelDetails) {
+    public void setContactTelDetails(Set<com.apress.prospring4.ch8.jpa.entities.ContactTelDetail> contactTelDetails) {
         this.contactTelDetails = contactTelDetails;
     }
 
-    public void addContactTelDetail(com.apress.prospring4.ch8.entities.ContactTelDetail contactTelDetail){
+    public void addContactTelDetail(com.apress.prospring4.ch8.jpa.entities.ContactTelDetail contactTelDetail){
         contactTelDetail.setContact(this);
         getContactTelDetails().add(contactTelDetail);
     }
 
-    public void removeContactTelDetail(com.apress.prospring4.ch8.entities.ContactTelDetail contactTelDetail){
+    public void removeContactTelDetail(com.apress.prospring4.ch8.jpa.entities.ContactTelDetail contactTelDetail){
         getContactTelDetails().remove(contactTelDetail);
     }
 
     @ManyToMany
     @JoinTable(name = "contact_hobby_detail", joinColumns = @JoinColumn(name = "CONTACT_ID"), inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
-    public Set<com.apress.prospring4.ch8.entities.Hobby> getHobbies() {
+    public Set<com.apress.prospring4.ch8.jpa.entities.Hobby> getHobbies() {
         return hobbies;
     }
 
-    public void setHobbies(Set<com.apress.prospring4.ch8.entities.Hobby> hobbies) {
+    public void setHobbies(Set<com.apress.prospring4.ch8.jpa.entities.Hobby> hobbies) {
         this.hobbies = hobbies;
     }
 
