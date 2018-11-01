@@ -40,6 +40,17 @@ public class SpringAuditJPASample {
 
         contactAudits = contactAuditService.findAll();
         listContacts(contactAudits);
+
+        contactAudit = contactAuditService.findAuditByRevision(1l, 1);
+        System.out.println("");
+        System.out.println("Old Contact with id 1 and rev 1: " + contactAudit);
+        System.out.println();
+
+        contactAudit = contactAuditService.findAuditByRevision(1l, 2);
+        System.out.println("");
+        System.out.println("Old Contact with id 1 and rev 2: " + contactAudit);
+        System.out.println();
+
     }
 
     private static void listContacts(List<ContactAudit> contacts) {

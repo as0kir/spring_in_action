@@ -1,6 +1,7 @@
 package com.apress.prospring4.ch8.spring_data.entities;
 
 import org.hibernate.annotations.Type;
+import org.hibernate.envers.Audited;
 import org.joda.time.DateTime;
 import org.springframework.data.domain.Auditable;
 
@@ -10,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Audited
 @Table(name = "contact_audit")
 public class ContactAudit implements Auditable<String, Long> {
     private Long id;
