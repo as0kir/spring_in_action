@@ -49,7 +49,7 @@ public class ProgrammaticContactServiceImpl implements ContactService {
     public long countAll() {
         return transactionTemplate.execute(new TransactionCallback<Long>() {
             public Long doInTransaction(TransactionStatus transactionStatus) {
-                Query nativeQuery = em.createNativeQuery("Contact.countAll", Integer.class);
+                Query nativeQuery = em.createNamedQuery("Contact.countAll", Long.class);
                 return (Long) nativeQuery.getSingleResult();
             }
         });
