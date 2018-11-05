@@ -1,6 +1,6 @@
-package com.apress.prospring4.ch9.repository;
+package com.apress.prospring4.ch9.transactions.repository;
 
-import com.apress.prospring4.ch9.entities.Contact;
+import com.apress.prospring4.ch9.transactions.entities.Contact;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

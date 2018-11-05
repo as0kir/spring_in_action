@@ -14,8 +14,8 @@
             http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <jdbc:embedded-database id="dataSource" type="H2">
-        <jdbc:script location="scripts/ch9/init.sql"/>
-        <jdbc:script location="scripts/ch9/fill.sql"/>
+        <jdbc:script location="scripts/ch9/transactions/init.sql"/>
+        <jdbc:script location="scripts/ch9/transactions/fill.sql"/>
     </jdbc:embedded-database>
 
     <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
@@ -29,7 +29,7 @@
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter"><bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/></property>
-        <property name="packagesToScan" value="com.apress.prospring4.ch9"/>
+        <property name="packagesToScan" value="com.apress.prospring4.ch9.transactions"/>
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
@@ -41,7 +41,7 @@
         </property>
     </bean>
 
-    <context:component-scan base-package="com.apress.prospring4.ch9"/>
+    <context:component-scan base-package="com.apress.prospring4.ch9.transactions"/>
 
-    <jpa:repositories base-package="com.apress.prospring4.ch9.repository" entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager"/>
+    <jpa:repositories base-package="com.apress.prospring4.ch9.transactions.repository" entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager"/>
 </beans>

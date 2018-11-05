@@ -1,10 +1,7 @@
-package com.apress.prospring4.ch9;
+package com.apress.prospring4.ch9.transactions;
 
-import com.apress.prospring4.ch9.entities.Contact;
-import com.apress.prospring4.ch9.service.ContactService;
+import com.apress.prospring4.ch9.transactions.service.ContactService;
 import org.springframework.context.support.GenericXmlApplicationContext;
-
-import java.util.List;
 
 public class TxProgrammaticSample {
     public static void main(String[] args) {

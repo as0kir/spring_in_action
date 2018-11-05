@@ -1,7 +1,7 @@
-package com.apress.prospring4.ch9.service;
+package com.apress.prospring4.ch9.transactions.service;
 
-import com.apress.prospring4.ch9.entities.Contact;
-import com.apress.prospring4.ch9.repository.ContactRepository;
+import com.apress.prospring4.ch9.transactions.entities.Contact;
+import com.apress.prospring4.ch9.transactions.repository.ContactRepository;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
