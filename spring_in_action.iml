@@ -2,7 +2,43 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/app-context-2-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/app-context-annotation.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/app-context-annotation.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/app-context-auto-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/app-context-col-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/app-context-dig-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/event/app-context-event-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/i18n/app-context-i18n-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/app-context-lk-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/app-context-prop-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/app-context-rep-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/environment/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch8/jpa/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch9/transactions/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch5/aspect/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch8/spring_data/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch5/proxy_factory_bean_aop/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch10/properties/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch6/spring_jdbc/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch6/annotation_jdbc/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch5/proxy_factory_bean/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch5/aspectj_annotation/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch7/app-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/app-context_hier-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch9/transactions/app-declarative-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch9/transactions/app-programmatic-context-xml.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/profile/highschool-config.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch4/profile/kindergarten-config.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/parent.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch3/spring-config.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/ch10/converter/app-context-xml.xml</file>
+        </fileset>
+      </configuration>
     </facet>
     <facet type="AspectJ" name="AspectJ">
       <configuration>
@@ -51,12 +87,16 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.12" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:1.3.172" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-jdbc:4.0.6" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-jta:4.0.6" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:transactions-api:4.0.6" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.atomikos:transactions:4.0.6" level="project" />
+    <orderEntry type="library" name="Maven: com.atomikos:atomikos-util:4.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.2.16.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.2.16.Final" level="project" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.jboss:jandex:2.0.3.Final" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.3.0" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.22.0-GA" level="project" />
@@ -79,5 +119,9 @@
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.jadira.usertype:usertype.core:7.0.0.CR1" level="project" />
     <orderEntry type="library" name="Maven: org.jadira.usertype:usertype.spi:7.0.0.CR1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aspects:5.0.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate.validator:hibernate-validator:6.0.8.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.3.4" level="project" />
   </component>
 </module>

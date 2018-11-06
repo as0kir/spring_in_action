@@ -8,29 +8,20 @@
             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd
             http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
-
-
     <context:annotation-config/>
 
-    <context:property-placeholder location="classpath:META-INF/properties/ch10/application.properties"/>
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.apress.prospring4.ch10.converters.StringToDateTimeConverter"/>
+                <bean class="com.apress.prospring4.ch10.converters.ContactToAnotherContactConverter"/>
+            </set>
+        </property>
+    </bean>
 
-    <bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer" p:propertyEditorRegistrars-ref="propertyEditorRegistrarsList"/>
-
-    <util:list id="propertyEditorRegistrarsList">
-        <bean class="com.apress.prospring4.ch10.properties.DateTimeEditorRegistrar">
-            <constructor-arg value = "${date.format.pattern}"/>
-        </bean>
-    </util:list>
-
-    <bean id="chris" class="com.apress.prospring4.ch10.properties.Contact"
+    <bean id="chris" class="com.apress.prospring4.ch10.converters.Contact"
           p:firstName="Chris"
           p:lastName="Schaefer"
           p:birthDate="1981-05-03"
           p:personalSite="http://www.dtzq.com"/>
-
-    <bean id="myContact" class="com.apress.prospring4.ch10.properties.Contact"
-          p:firstName="${myContact.firstName}"
-          p:lastName="${myContact.lastName}"
-          p:birthDate="${myContact.birthDate}"
-          p:personalSite="${myContact.personalSite}"/>
 </beans>
